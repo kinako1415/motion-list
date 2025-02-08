@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 
 const box = {
   width: 100,
@@ -7,13 +7,17 @@ const box = {
   borderRadius: 5,
 };
 
-export const Box3 = () => {
+export const Box4 = ({ delay }: { delay: number }) => {
   return (
     <motion.div
-      animate={{ scale: [0.8, 1.2, 0.8] }}
+      animate={{
+        opacity: [0, 1],
+        scale: [0.2, 1],
+      }}
       transition={{
-        duration: 1,
-        ease: [0, 0, 0.05, 1],
+        duration: 0.3,
+        delay: delay,
+        ease: easeOut,
         repeatType: "loop",
       }}
       style={box}
