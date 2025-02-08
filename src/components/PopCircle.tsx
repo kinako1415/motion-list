@@ -4,11 +4,12 @@ import { ReactNode, useState } from "react";
 const boxStyle = {
   width: "fit-content",
   height: "fit-content",
-  padding: "0 20px",
+  padding: "8px 20px",
   backgroundColor: "#9911ff",
-  borderRadius: 5,
+  borderRadius: 10,
   border: "none",
   cursor: "pointer",
+  fontWeight: "bold",
 };
 
 const circleStyle = {
@@ -31,7 +32,13 @@ export const PopCircle = ({ children }: { children: ReactNode }) => {
       const randomY = Math.floor(Math.random() * 301 - 150);
       list.push(
         <motion.div
-          initial={{ scale: 1.8, opacity: 1, position: "absolute", zIndex: -1 }}
+          key={i}
+          initial={{
+            scale: 1.8,
+            opacity: 1,
+            position: "absolute",
+            zIndex: -10,
+          }}
           animate={{
             x: randomX,
             y: randomY,
@@ -53,7 +60,7 @@ export const PopCircle = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <motion.button
-        initial={{ scale: 1, position: "relative" }}
+        initial={{ scale: 1, position: "relative", zIndex: 1 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.92 }}
         onMouseDown={() => setIsTapped(true)}

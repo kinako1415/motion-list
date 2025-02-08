@@ -44,7 +44,7 @@ export default function Home() {
               <Box4 delay={0.6} />
             </div>
           </div>
-          <PopCircle>flkadkasdljflasdf</PopCircle>
+          <PopCircle>クリックしてみて！！</PopCircle>
         </div>
       </main>
     </div>
