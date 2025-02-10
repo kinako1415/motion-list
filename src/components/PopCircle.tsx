@@ -2,8 +2,6 @@ import { easeOut, motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 
 const boxStyle = {
-  width: "fit-content",
-  height: "fit-content",
   padding: "8px 20px",
   backgroundColor: "#9911ff",
   borderRadius: 10,
@@ -12,15 +10,17 @@ const boxStyle = {
   fontWeight: "bold",
 };
 
-const circleStyle = {
+const circleBaseStyle = {
   width: 10,
   height: 10,
-  backgroundColor: "#2ADA6E",
   borderRadius: "50%",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
+  zIndex: -1,
 };
+
+const colors = ["#41BCFF", "#2ADA6E", "#FFC80B", "#FF9F40", "#E54671"]; // 5色定義
 
 export const PopCircle = ({ children }: { children: ReactNode }) => {
   const [isTapped, setIsTapped] = useState(false);
@@ -28,8 +28,10 @@ export const PopCircle = ({ children }: { children: ReactNode }) => {
   const RandomCircle = (function () {
     const list = [];
     for (let i = 0; i < 10; i++) {
-      const randomX = Math.floor(Math.random() * 301 - 150);
-      const randomY = Math.floor(Math.random() * 301 - 150);
+      const randomX = Math.floor(Math.random() * 201 - 100);
+      const randomY = Math.floor(Math.random() * 201 - 100);
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
       list.push(
         <motion.div
           key={i}
@@ -37,7 +39,7 @@ export const PopCircle = ({ children }: { children: ReactNode }) => {
             scale: 1.8,
             opacity: 1,
             position: "absolute",
-            zIndex: -10,
+            zIndex: -1,
           }}
           animate={{
             x: randomX,
@@ -49,7 +51,7 @@ export const PopCircle = ({ children }: { children: ReactNode }) => {
             duration: 0.5,
             ease: "easeInOut",
           }}
-          style={circleStyle}
+          style={{ ...circleBaseStyle, backgroundColor: randomColor }}
           onAnimationComplete={() => setIsTapped(false)}
         />
       );
@@ -58,7 +60,10 @@ export const PopCircle = ({ children }: { children: ReactNode }) => {
   })();
 
   return (
-    <div>
+    <motion.div
+      animate={{ opacity: [0, 1], y: [40, 0], scaleY: [0.8, 1] }}
+      style={{ position: "relative", height: "fit-content" }}
+    >
       <motion.button
         initial={{ scale: 1, position: "relative", zIndex: 1 }}
         whileHover={{ scale: 1.08 }}
@@ -71,8 +76,8 @@ export const PopCircle = ({ children }: { children: ReactNode }) => {
         style={boxStyle}
       >
         {children}
-        {isTapped && RandomCircle}
       </motion.button>
-    </div>
+      {isTapped && RandomCircle}
+    </motion.div>
   );
 };
