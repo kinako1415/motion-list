@@ -22,7 +22,7 @@ const circleBaseStyle = {
 
 const colors = ["#41BCFF", "#2ADA6E", "#FFC80B", "#FF9F40", "#E54671"]; // 5色定義
 
-export const PopCircle = ({ children }: { children: ReactNode }) => {
+export const PopCircleButton = ({ children }: { children: ReactNode }) => {
   const [isTapped, setIsTapped] = useState(false);
 
   const RandomCircle = (function () {

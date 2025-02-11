@@ -1,13 +1,17 @@
 "use client";
-import "@/app/loading/loading.css";
+import style from "@/app/button/button.module.css";
 import { Button1 } from "@/components/Button1";
-import { PopCircle } from "@/components/PopCircle";
+import { PopCircleButton } from "@/components/PopCircleButton";
+import Link from "next/link";
 
 export default function loading() {
   return (
-    <div className="load-all">
+    <div className={style.boxAll}>
+      <PopCircleButton>
+        <Link href={"/"}>topに戻る</Link>
+      </PopCircleButton>
       <Button1>dfla</Button1>
-      <PopCircle>クリックしてみて！！</PopCircle>
+      <PopCircleButton>クリックしてみて！！</PopCircleButton>
     </div>
   );
 }
