@@ -1,0 +1,5 @@
+.button {
+  background: linear-gradient(97.4deg, #f84f90 0%, #ed4b4b 100%);
+  box-shadow: 0px 12px 26px rgba(242, 77, 107, 0.2);
+  border-radius: 30px;
+}
