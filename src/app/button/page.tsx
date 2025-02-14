@@ -1,7 +1,7 @@
 "use client";
 import style from "@/app/button/button.module.css";
 import { Button1 } from "@/components/Button1";
-import { GradationButton } from "@/components/gradationButton";
+import { GradationButton } from "@/components/GradationButton";
 import { PopCircleButton } from "@/components/PopCircleButton";
 import Link from "next/link";
 
