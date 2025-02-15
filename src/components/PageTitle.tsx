@@ -1,50 +1,28 @@
+import { ReactNode } from "react";
 import styles from "./PageTitle.module.css";
 import Image from "next/image";
+import { IconButton } from "./IconButton";
 
-type rankingCardType = {
-  ranking: number;
-  location: string;
-  heartsCount: number;
-  url: string;
+type PageTitleType = {
+  pageName: string;
+  children: ReactNode;
 };
 
-export const PageTitle = ({
-  ranking,
-  location,
-  heartsCount,
-  url,
-}: rankingCardType) => {
+export const PageTitle = ({ pageName, children }: PageTitleType) => {
   return (
-    <div className={`${styles.card}`}>
-      {ranking === 1 ? (
-        <div className={`${styles.redCircle}`}></div>
-      ) : (
-        <div></div>
-      )}
-      <div className={`${styles.whiteCircle}`}></div>
-      <div className={styles.info}>
-        {ranking === 1 ? (
-          <div className={styles.ranking}>{ranking}</div>
-        ) : (
-          <div className={`${styles.ranking} ${styles.black}`}>{ranking}</div>
-        )}
-
-        <div className={styles.right}>
-          <div>{location}</div>
-          <div className={styles.likesContainer}>
-            <Image
-              className={styles.heart}
-              src="/Heart.svg"
-              alt={location}
-              width={26}
-              height={26}
-            />
-            <div className={styles.gradationText}>{heartsCount}</div>
-          </div>
-        </div>
+    <div className={styles.container}>
+      <div className={styles.icon}>
+        <IconButton
+          color="none"
+          url="https://api.iconify.design/heroicons:arrow-left-16-solid.svg?color=%23ffffff"
+        />
       </div>
-      <div className={styles.imageContainer}>
-        <Image className={styles.image} src={url} alt={location} fill />
+      <div className={styles.textContainer}>
+        <span className={styles.title}>{pageName}</span>
+        <span className={styles.description}>{children}</span>
+      </div>
+      <div className={styles.imgContainer}>
+        <Image src="/backfire.svg" alt="fire" width={222} height={222} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { RankingCard } from "@/components/RankingCard";
 import { IconButton } from "@/components/IconButton";
+import { PageTitle } from "@/components/PageTitle";
 
 export default function PageInput() {
   const page: string = "top";
@@ -13,6 +14,10 @@ export default function PageInput() {
         alignItems: "center",
       }}
     >
+      <PageTitle pageName="ランキング">
+        ランキングはリアルタイムで更新され、人気の変動もひと目で分かる。あなたのお気に入りの場所も、もしかしたらランクインしているかも？
+        今、行くべきアツい場所を見つけよう！
+      </PageTitle>
       <div
         style={{
           display: "flex",
