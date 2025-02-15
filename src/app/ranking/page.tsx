@@ -1,38 +1,18 @@
 "use client";
-import { GradationButton } from "@/components/GradationButton";
-import { IconButton } from "@/components/IconButton";
-import { Input } from "@/components/Input";
 import { RankingCard } from "@/components/RankingCard";
-import { SubmitHandler, useForm } from "react-hook-form";
-
-interface IFormInput {
-  name: string;
-}
+import { IconButton } from "@/components/IconButton";
 
 export default function PageInput() {
-  const { register, handleSubmit } = useForm<IFormInput>();
-
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
-
   const page: string = "top";
-
   return (
-    <div style={{ display: "flex", gap: "40px" }}>
-      <form
-        style={{ display: "flex", flexDirection: "column", width: "30%" }}
-        // onSubmit={handleSubmit(onSubmit)}
-      >
-        <Input label="name" register={register} fieldName="name" />
-        <Input
-          label="e-mail address"
-          register={register}
-          fieldName="mailAddress"
-        />
-        <Input label="password" register={register} fieldName="password" />
-        <GradationButton color="red" onclick={handleSubmit(onSubmit)}>
-          作成
-        </GradationButton>
-      </form>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        alignItems: "center",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -42,6 +22,10 @@ export default function PageInput() {
           height: "fit-content",
           borderRadius: "50px",
           padding: "8px 16px",
+          position: "fixed",
+          zIndex: 10,
+          bottom: "24px",
+          left: "24px",
         }}
       >
         {page === "top" ? (
@@ -72,12 +56,15 @@ export default function PageInput() {
           <IconButton url="https://api.iconify.design/icon-park-outline:ranking.svg?color=%231b2838" />
         )}
       </div>
-      <RankingCard
-        ranking={1}
-        location="愛知県 名古屋城"
-        heartsCount={120}
-        url="/image1.png"
-      />
+      {[...Array(20)].map((_, i) => (
+        <RankingCard
+          key={i}
+          ranking={i + 1}
+          location="愛知県 名古屋城"
+          heartsCount={120}
+          url="/image1.png"
+        />
+      ))}
     </div>
   );
 }
