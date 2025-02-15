@@ -10,7 +10,7 @@ export const Input = ({ label, register, fieldName }: InputProps) => {
   return (
     <div className={styles.inputBox}>
       <label className={styles.label}>{label}</label>
-      <input className={styles.input} {...register(fieldName)} />;
+      <input className={styles.input} {...register(fieldName)} />
     </div>
   );
 };
