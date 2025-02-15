@@ -3,6 +3,7 @@ import style from "@/app/button/button.module.css";
 import { Button1 } from "@/components/Button1";
 import { GradationButton } from "@/components/GradationButton";
 import { IconButton } from "@/components/IconButton";
+import { Input } from "@/components/Input";
 import { PopCircleButton } from "@/components/PopCircleButton";
 import { WhiteButton } from "@/components/WhiteButton";
 import Link from "next/link";
