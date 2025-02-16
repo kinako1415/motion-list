@@ -5,6 +5,7 @@ import Image from "next/image";
 type IconButtonProps = {
   color?: "red" | "gray" | "none";
   url: string;
+  onClick?: () => void;
 };
 
 import { easeOut, motion } from "framer-motion";
@@ -12,6 +13,7 @@ import { easeOut, motion } from "framer-motion";
 export const IconButton: React.FC<IconButtonProps> = ({
   url,
   color = "gray",
+  onClick,
 }) => {
   return (
     <div style={{ position: "relative", height: "fit-content" }}>
@@ -24,6 +26,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
           ease: easeOut,
         }}
         className={`${styles.button} ${styles[color]}`}
+        onClick={onClick}
       >
         <Image src={url} alt="icon" width={24} height={24} />
       </motion.button>

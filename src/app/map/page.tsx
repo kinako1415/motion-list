@@ -1,9 +1,10 @@
 "use client";
-import { RankingCard } from "@/components/RankingCard";
+import { AlbumBottomSheet } from "@/components/AlbumBottomSheet";
 import { IconButton } from "@/components/IconButton";
-import { PageTitle } from "@/components/PageTitle";
+import { useState } from "react";
 
 export default function PageInput() {
+  const [isOpen, setIsOpen] = useState(false);
   const page: string = "top";
   return (
     <div
@@ -13,10 +14,9 @@ export default function PageInput() {
         alignItems: "center",
       }}
     >
-      <PageTitle pageName="ランキング">
-        ランキングはリアルタイムで更新され、人気の変動もひと目で分かる。あなたのお気に入りの場所も、もしかしたらランクインしているかも？
-        今、行くべきアツい場所を見つけよう！
-      </PageTitle>
+      <AlbumBottomSheet pageName="fsldkf" isOpen={isOpen} setIsOpen={setIsOpen}>
+        sdjkf
+      </AlbumBottomSheet>
       <div
         style={{
           display: "flex",
@@ -36,6 +36,7 @@ export default function PageInput() {
           <IconButton
             color="red"
             url="https://api.iconify.design/heroicons:fire.svg?color=%23ffffff"
+            onClick={() => setIsOpen(true)}
           />
         ) : (
           <IconButton
@@ -59,24 +60,6 @@ export default function PageInput() {
         ) : (
           <IconButton url="https://api.iconify.design/icon-park-outline:ranking.svg?color=%231b2838" />
         )}
-      </div>
-      <div
-        style={{
-          padding: "220px 0",
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-        }}
-      >
-        {[...Array(20)].map((_, i) => (
-          <RankingCard
-            key={i}
-            ranking={i + 1}
-            location="愛知県 名古屋城"
-            heartsCount={120}
-            url="/image1.png"
-          />
-        ))}
       </div>
     </div>
   );
