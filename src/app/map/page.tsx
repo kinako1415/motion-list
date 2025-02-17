@@ -14,7 +14,12 @@ export default function PageInput() {
         alignItems: "center",
       }}
     >
-      <AlbumBottomSheet pageName="fsldkf" isOpen={isOpen} setIsOpen={setIsOpen}>
+      <AlbumBottomSheet
+        pageName="fsldkf"
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        location="fadf"
+      >
         sdjkf
       </AlbumBottomSheet>
       <div

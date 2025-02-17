@@ -1,40 +1,25 @@
-import { Dispatch, ReactNode, SetStateAction, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 import styles from "./AlbumBottomSheet.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { style } from "framer-motion/client";
 
 type PageTitleType = {
   pageName: string;
-  children: ReactNode;
+  location: ReactNode;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export const AlbumBottomSheet = ({
   isOpen,
-  children,
-  pageName,
+  location,
   setIsOpen,
 }: PageTitleType) => {
   return (
-    // <motion.div className={styles.container}>
-    //   <div>
-    //     {location}
-    //     <span>で撮った写真</span>
-    //   </div>
-    // </motion.div>
     <>
-      {/* オーバーレイ（背景クリックで閉じる） */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Bottom Sheet */}
       <motion.div
-        className="fixed bottom-0 left-0 w-full bg-white p-5 rounded-t-lg shadow-lg"
+        className={styles.container}
         initial={{ y: "100%" }}
         animate={{ y: isOpen ? "0%" : "100%" }}
         exit={{ y: "100%" }}
@@ -42,30 +27,27 @@ export const AlbumBottomSheet = ({
         drag="y"
         dragConstraints={{ top: 0, bottom: 0 }}
         onDragEnd={(_, info) => {
-          if (info.offset.y > 100) setIsOpen(false); // 100px以上スワイプしたら閉じる
+          if (info.velocity.y > 500) setIsOpen(false);
         }}
       >
-        {/* スワイプ用のハンドル */}
-        <div className="w-12 h-1 bg-gray-400 rounded-full mx-auto mb-3" />
+        <div className="mt-4 w-12 h-4 bg-gray-400 rounded-full mx-auto mb-3" />
 
-        <h2 className="text-lg font-bold">Swipeable Bottom Sheet</h2>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-        <p>上にスワイプして閉じることができます。</p>
-
-        <button
-          className="absolute top-2 right-4 text-gray-500"
-          onClick={() => setIsOpen(false)}
-        >
-          ✕
-        </button>
+        <div className={styles.text}>
+          {location}
+          <span>で撮った写真</span>
+        </div>
+        <div className={styles.imageBox}>
+          {[...Array(20)].map((_, i) => (
+            <Image
+              className={styles.image}
+              key={i}
+              src="/image1.png"
+              alt="fire"
+              width={222}
+              height={222}
+            />
+          ))}
+        </div>
       </motion.div>
     </>
   );
