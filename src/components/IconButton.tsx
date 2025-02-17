@@ -3,7 +3,7 @@ import styles from "./IconButton.module.css";
 import Image from "next/image";
 
 type IconButtonProps = {
-  color?: "red" | "gray" | "none";
+  color?: "red" | "gray" | "white" | "none";
   url: string;
   onClick?: () => void;
 };

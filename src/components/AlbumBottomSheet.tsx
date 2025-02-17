@@ -2,7 +2,6 @@ import { Dispatch, ReactNode, SetStateAction } from "react";
 import styles from "./AlbumBottomSheet.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { style } from "framer-motion/client";
 
 type PageTitleType = {
   pageName: string;
@@ -30,7 +29,7 @@ export const AlbumBottomSheet = ({
           if (info.velocity.y > 500) setIsOpen(false);
         }}
       >
-        <div className="mt-4 w-12 h-4 bg-gray-400 rounded-full mx-auto mb-3" />
+        <div className="mt-4 w-12 h-2 bg-gray-400 rounded-full mx-auto mb-3" />
 
         <div className={styles.text}>
           {location}

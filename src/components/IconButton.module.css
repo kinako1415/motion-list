@@ -18,6 +18,10 @@
   background: linear-gradient(97.4deg, #f84f90 0%, #ed4b4b 100%);
 }
 
+.white {
+  background-color: #ffffff;
+}
+
 .none {
   background: none;
 }
