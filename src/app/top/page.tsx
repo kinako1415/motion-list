@@ -1,5 +1,6 @@
 "use client";
 import { IconButton } from "@/components/IconButton";
+import { LocationRanking } from "@/components/LocationRanking";
 import { Meter } from "@/components/Meter";
 
 export default function PageInput() {
@@ -13,6 +14,7 @@ export default function PageInput() {
       }}
     >
       <Meter />
+      <LocationRanking />
       <div
         style={{
           display: "flex",
