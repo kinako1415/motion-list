@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "@/components/Box1.css";
+import "./Box1.css";
 
 // フェードインアニメション
 export const Box1 = () => {

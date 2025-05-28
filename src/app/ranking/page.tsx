@@ -1,7 +1,7 @@
 "use client";
-import { RankingCard } from "@/components/RankingCard";
-import { IconButton } from "@/components/IconButton";
-import { PageTitle } from "@/components/PageTitle";
+import { RankingCard } from "@/components/cards/RankingCard";
+import { IconButton } from "@/components/ui/buttons/IconButton";
+import { PageTitle } from "@/components/layout/PageTitle";
 
 export default function PageInput() {
   const page: string = "top";

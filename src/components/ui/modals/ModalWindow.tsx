@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./ModalWindow.module.scss";
-import { GradationIconButton } from "./GradationIconButton";
+import { GradationIconButton } from "../buttons/GradationIconButton";
 import { Icon } from "@iconify/react";
 import { ReactNode } from "react";
 

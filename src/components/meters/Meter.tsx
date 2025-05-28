@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IconButton } from "./IconButton";
+import { IconButton } from "../ui/buttons/IconButton";
 import styles from "./Meter.module.css";
 
 export const Meter = () => {

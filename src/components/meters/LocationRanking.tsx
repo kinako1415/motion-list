@@ -1,4 +1,4 @@
-import { IconButton } from "./IconButton";
+import { IconButton } from "../ui/buttons/IconButton";
 import styles from "./LocationRanking.module.css";
 
 export const LocationRanking = () => {

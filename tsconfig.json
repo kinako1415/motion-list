@@ -13,15 +13,22 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/ui/*": ["./src/components/ui/*"],
+      "@/components/layout/*": ["./src/components/layout/*"],
+      "@/components/cards/*": ["./src/components/cards/*"],
+      "@/components/meters/*": ["./src/components/meters/*"],
+      "@/components/animations/*": ["./src/components/animations/*"],
+      "@/styles/*": ["./src/styles/*"]
+    },
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

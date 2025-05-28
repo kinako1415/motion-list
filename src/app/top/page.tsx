@@ -1,7 +1,7 @@
 "use client";
-import { IconButton } from "@/components/IconButton";
-import { LocationRanking } from "@/components/LocationRanking";
-import { Meter } from "@/components/Meter";
+import { IconButton } from "@/components/ui/buttons/IconButton";
+import { LocationRanking } from "@/components/meters/LocationRanking";
+import { Meter } from "@/components/meters/Meter";
 
 export default function PageInput() {
   const page: string = "top";

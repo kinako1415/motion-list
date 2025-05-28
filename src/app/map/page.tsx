@@ -1,6 +1,6 @@
 "use client";
-import { AlbumBottomSheet } from "@/components/AlbumBottomSheet";
-import { IconButton } from "@/components/IconButton";
+import { AlbumBottomSheet } from "@/components/layout/AlbumBottomSheet";
+import { IconButton } from "@/components/ui/buttons/IconButton";
 import { useState } from "react";
 
 export default function PageInput() {

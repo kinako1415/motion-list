@@ -1,16 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { Loading } from "@/components/Loading";
-import { PhaseText } from "@/components/PhaseText";
-import "@/app/loading/loading.css";
-import { LoadingNormal } from "@/components/LoadingNormal";
+import { Loading } from "@/components/ui/loading/Loading";
+import { PhaseText } from "@/components/ui/loading/PhaseText";
+import styles from "@/styles/pages/loading.module.css";
+import { LoadingNormal } from "@/components/ui/loading/LoadingNormal";
 
 export default function loading() {
   return (
-    <div className="load-all">
-      <motion.div className="load-box">
+    <div className={styles.loadAll}>
+      <motion.div className={styles.loadBox}>
         <PhaseText>コードを読み込もう！！！！</PhaseText>
-        <div className="load">
+        <div className={styles.load}>
           <Loading delay={0.6} isActive={false} />
           <Loading delay={0.5} isActive={true} />
           <LoadingNormal delay={0.2} />
@@ -26,7 +26,7 @@ export default function loading() {
           ase: [0.95, 0, 1, 1],
           times: [0, 0.7, 0.8, 1],
         }}
-        className="bg-text color-yellow"
+        className={`${styles.bgText} ${styles.colorYellow}`}
       >
         1
       </motion.div>
@@ -39,7 +39,7 @@ export default function loading() {
           times: [0, 0.7, 0.8, 1],
           repeatType: "loop",
         }}
-        className="bg-text color-red"
+        className={`${styles.bgText} ${styles.colorRed}`}
       >
         2
       </motion.div>

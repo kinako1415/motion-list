@@ -1,5 +1,6 @@
+/* Button page styles */
 .boxAll {
   padding: 20px;
   display: flex;
-  gap: 20;
+  gap: 20px;
 }

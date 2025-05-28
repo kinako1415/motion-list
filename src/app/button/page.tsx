@@ -1,10 +1,10 @@
 "use client";
-import style from "@/app/button/button.module.css";
-import { Button1 } from "@/components/Button1";
-import { GradationButton } from "@/components/GradationButton";
-import { IconButton } from "@/components/IconButton";
-import { PopCircleButton } from "@/components/PopCircleButton";
-import { WhiteButton } from "@/components/WhiteButton";
+import style from "@/styles/pages/button.module.css";
+import { Button1 } from "@/components/ui/buttons/Button1";
+import { GradationButton } from "@/components/ui/buttons/GradationButton";
+import { IconButton } from "@/components/ui/buttons/IconButton";
+import { PopCircleButton } from "@/components/ui/buttons/PopCircleButton";
+import { WhiteButton } from "@/components/ui/buttons/WhiteButton";
 import Link from "next/link";
 
 export default function loading() {

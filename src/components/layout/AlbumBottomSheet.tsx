@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 type PageTitleType = {
+  children?: ReactNode;
   pageName: string;
   location: ReactNode;
   isOpen: boolean;
@@ -11,6 +12,7 @@ type PageTitleType = {
 };
 
 export const AlbumBottomSheet = ({
+  children,
   isOpen,
   location,
   setIsOpen,

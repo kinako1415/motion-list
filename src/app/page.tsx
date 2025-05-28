@@ -1,9 +1,9 @@
 "use client";
-import { Box1 } from "@/components/Box1";
-import { Box2 } from "@/components/Box2";
-import { Box3 } from "@/components/Box3";
-import { Box4 } from "@/components/Box4";
-import { PopCircleButton } from "@/components/PopCircleButton";
+import { Box1 } from "@/components/animations/Box1";
+import { Box2 } from "@/components/animations/Box2";
+import { Box3 } from "@/components/animations/Box3";
+import { Box4 } from "@/components/animations/Box4";
+import { PopCircleButton } from "@/components/ui/buttons/PopCircleButton";
 import Image from "next/image";
 import Link from "next/link";
 
