@@ -1,0 +1,47 @@
+.spinner {
+  position: relative;
+  display: inline-block;
+}
+
+.line {
+  position: absolute;
+  border-radius: 4px;
+  transform-origin: center;
+}
+
+/* サイズバリエーション */
+.small {
+  width: 16px;
+  height: 16px;
+}
+
+.small .line {
+  width: 2px;
+  height: 6px;
+  top: 2px;
+  left: 7px;
+}
+
+.medium {
+  width: 24px;
+  height: 24px;
+}
+
+.medium .line {
+  width: 3px;
+  height: 8px;
+  top: 3px;
+  left: 10.5px;
+}
+
+.large {
+  width: 32px;
+  height: 32px;
+}
+
+.large .line {
+  width: 4px;
+  height: 10px;
+  top: 4px;
+  left: 14px;
+}

@@ -1,0 +1,109 @@
+/* IOSTabBar.module.css */
+.tabBar {
+  display: flex;
+  height: 83px;
+  padding-bottom: 34px; /* Safe area */
+  padding-top: 8px;
+  background: rgba(248, 248, 248, 0.94);
+  backdrop-filter: blur(40px);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.tabBar.dark {
+  background: rgba(28, 28, 30, 0.94);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  min-height: 49px;
+  position: relative;
+}
+
+.iconContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 2px;
+}
+
+.iconContainer svg {
+  width: 24px;
+  height: 24px;
+  color: #8e8e93;
+  transition: color 0.2s ease;
+}
+
+.tabItem.selected .iconContainer svg {
+  color: #007aff;
+}
+
+.dark .tabItem.selected .iconContainer svg {
+  color: #0a84ff;
+}
+
+.dark .iconContainer svg {
+  color: #8e8e93;
+}
+
+.label {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #8e8e93;
+  text-align: center;
+  transition: color 0.2s ease;
+  line-height: 1.2;
+}
+
+.tabItem.selected .label {
+  color: #007aff;
+  font-weight: 600;
+}
+
+.dark .label {
+  color: #8e8e93;
+}
+
+.dark .tabItem.selected .label {
+  color: #0a84ff;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 16px;
+  height: 16px;
+  background: #ff3b30;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  padding: 0 4px;
+  border: 2px solid rgba(248, 248, 248, 1);
+}
+
+.dark .badge {
+  border: 2px solid rgba(28, 28, 30, 1);
+}

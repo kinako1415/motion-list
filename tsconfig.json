@@ -21,6 +21,7 @@
       "@/components/cards/*": ["./src/components/cards/*"],
       "@/components/meters/*": ["./src/components/meters/*"],
       "@/components/animations/*": ["./src/components/animations/*"],
+      "@/components/ios/*": ["./src/components/ios/*"],
       "@/styles/*": ["./src/styles/*"]
     },
     "incremental": true,
